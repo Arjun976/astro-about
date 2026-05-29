@@ -1,7 +1,8 @@
-export default function HeroBanner({ title }: { title: string }) {
+export default function HeroBanner({ title, bgImage }: { title: string; bgImage?: string }) {
+  const finalBg = bgImage || "/image/banner_bg.png";
   return (
     <section className="relative h-[300px] md:h-[425px] w-full overflow-hidden">
-      <img src="/image/banner_bg.png" alt="About" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={finalBg} alt="Banner" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex items-center h-full">

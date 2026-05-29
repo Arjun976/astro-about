@@ -60,7 +60,7 @@ export default function Header({ activePage }: { activePage?: string }) {
           <nav className="flex gap-8 text-[16px] text-[#026BAE] font-semibold font-poppins">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={`${link.label}-${link.href}`}
                 href={link.href}
                 className={`hover:text-[#014F82] transition duration-300 ${
                   activePage === link.label.toLowerCase()
@@ -86,7 +86,7 @@ export default function Header({ activePage }: { activePage?: string }) {
         <div className="xl:hidden border-t border-[#026BAE33] bg-white">
           <nav className="flex flex-col text-sm text-[#026BAE] font-medium">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="px-6 py-4 border-b hover:bg-[#026BAE]/5">
+              <Link key={`${link.label}-${link.href}`} href={link.href} className="px-6 py-4 border-b hover:bg-[#026BAE]/5">
                 {link.label}
               </Link>
             ))}
